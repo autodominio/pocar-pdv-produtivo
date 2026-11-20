@@ -35,7 +35,7 @@
   "rewrites": [
     {
       "source": "/api/:caminho*",
-      "destination": "https://203-0-113-10.sslip.io/api/:caminho*"
+      "destination": "https://158-220-73-25.sslip.io/api/:caminho*"
     }
   ]
 }
