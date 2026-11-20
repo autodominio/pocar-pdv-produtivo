@@ -1,0 +1,2246 @@
+[
+ {
+  "id": "PL001",
+  "nome": "Bomba de Ar Brasport",
+  "categoria": "Acessórios",
+  "preco": 29.9,
+  "custo": 12.9,
+  "variantes": [
+   {
+    "sku": "PL001-U-UNICA",
+    "tam": "Único",
+    "cor": "Única",
+    "qtd": 3,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL002",
+  "nome": "Camisa Ajax 25/26",
+  "categoria": "Camisas de time",
+  "preco": 169.9,
+  "custo": 64.87,
+  "variantes": [
+   {
+    "sku": "PL002-U-UNICA",
+    "tam": "Único",
+    "cor": "Única",
+    "qtd": 3,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL003",
+  "nome": "Camisa seleção 26/27 jogador",
+  "categoria": "Camisas de time",
+  "preco": 130,
+  "custo": 113.55,
+  "variantes": [
+   {
+    "sku": "PL003-G-UNICA",
+    "tam": "G",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   },
+   {
+    "sku": "PL003-GG-UNICA",
+    "tam": "GG",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL004",
+  "nome": "Camisa atlético mineiro 26/27",
+  "categoria": "Camisas de time",
+  "preco": 169.9,
+  "custo": 70.41,
+  "variantes": [
+   {
+    "sku": "PL004-GG-UNICA",
+    "tam": "GG",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL005",
+  "nome": "Camisa Bahia 26/27",
+  "categoria": "Camisas de time",
+  "preco": 169.9,
+  "custo": 53.47,
+  "variantes": [
+   {
+    "sku": "PL005-GG-UNICA",
+    "tam": "GG",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL006",
+  "nome": "Camisa Barcelona 26/27",
+  "categoria": "Camisas de time",
+  "preco": 169.9,
+  "custo": 70.41,
+  "variantes": [
+   {
+    "sku": "PL006-U-UNICA",
+    "tam": "Único",
+    "cor": "Única",
+    "qtd": 2,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL007",
+  "nome": "Camisa Botafogo 26/27",
+  "categoria": "Camisas de time",
+  "preco": 169.9,
+  "custo": 53.96,
+  "variantes": [
+   {
+    "sku": "PL007-G-UNICA",
+    "tam": "G",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   },
+   {
+    "sku": "PL007-GG-UNICA",
+    "tam": "GG",
+    "cor": "Única",
+    "qtd": 2,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL008",
+  "nome": "Camisa feminina Corinthians 26/27",
+  "categoria": "Camisas de time",
+  "preco": 169.9,
+  "custo": 53.1,
+  "variantes": [
+   {
+    "sku": "PL008-M-UNICA",
+    "tam": "M",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   },
+   {
+    "sku": "PL008-G-UNICA",
+    "tam": "G",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL009",
+  "nome": "Camisa Corinthians Ed.especial 24/25",
+  "categoria": "Camisas de time",
+  "preco": 169.9,
+  "custo": 84.87,
+  "variantes": [
+   {
+    "sku": "PL009-G1-UNICA",
+    "tam": "G1",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL010",
+  "nome": "Camisa Corinthians 26/27",
+  "categoria": "Camisas de time",
+  "preco": 169.9,
+  "custo": 70.41,
+  "variantes": [
+   {
+    "sku": "PL010-G-UNICA",
+    "tam": "G",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   },
+   {
+    "sku": "PL010-GG-UNICA",
+    "tam": "GG",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL011",
+  "nome": "Camisa cruzeiro 26/27",
+  "categoria": "Camisas de time",
+  "preco": 169.9,
+  "custo": 53.47,
+  "variantes": [
+   {
+    "sku": "PL011-GG-UNICA",
+    "tam": "GG",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL012",
+  "nome": "Camisa Seleção Ed. Especial 26/27",
+  "categoria": "Camisas de time",
+  "preco": 100,
+  "custo": 75.9,
+  "variantes": [
+   {
+    "sku": "PL012-G-UNICA",
+    "tam": "G",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   },
+   {
+    "sku": "PL012-GG-UNICA",
+    "tam": "GG",
+    "cor": "Única",
+    "qtd": 2,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL013",
+  "nome": "Camisa Dryfit básica preta",
+  "categoria": "Camisetas Dry Fit",
+  "preco": 29.9,
+  "custo": 14.8,
+  "variantes": [
+   {
+    "sku": "PL013-M-UNICA",
+    "tam": "M",
+    "cor": "Única",
+    "qtd": 2,
+    "min": 0
+   },
+   {
+    "sku": "PL013-G-UNICA",
+    "tam": "G",
+    "cor": "Única",
+    "qtd": 2,
+    "min": 0
+   },
+   {
+    "sku": "PL013-GG-UNICA",
+    "tam": "GG",
+    "cor": "Única",
+    "qtd": 7,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL014",
+  "nome": "Camisa Dryfit azul claro básica",
+  "categoria": "Camisetas Dry Fit",
+  "preco": 29.9,
+  "custo": 14.8,
+  "variantes": [
+   {
+    "sku": "PL014-G-UNICA",
+    "tam": "G",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL015",
+  "nome": "Camisa Dryfit azul marinho básica",
+  "categoria": "Camisetas Dry Fit",
+  "preco": 29.9,
+  "custo": 14.8,
+  "variantes": [
+   {
+    "sku": "PL015-M-UNICA",
+    "tam": "M",
+    "cor": "Única",
+    "qtd": 2,
+    "min": 0
+   },
+   {
+    "sku": "PL015-G-UNICA",
+    "tam": "G",
+    "cor": "Única",
+    "qtd": 4,
+    "min": 0
+   },
+   {
+    "sku": "PL015-GG-UNICA",
+    "tam": "GG",
+    "cor": "Única",
+    "qtd": 4,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL016",
+  "nome": "Camisa Dryfit Branca Básica",
+  "categoria": "Camisetas Dry Fit",
+  "preco": 29.9,
+  "custo": 14.8,
+  "variantes": [
+   {
+    "sku": "PL016-M-UNICA",
+    "tam": "M",
+    "cor": "Única",
+    "qtd": 2,
+    "min": 0
+   },
+   {
+    "sku": "PL016-G-UNICA",
+    "tam": "G",
+    "cor": "Única",
+    "qtd": 2,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL017",
+  "nome": "Camisa Dryfit verde militar básica",
+  "categoria": "Camisetas Dry Fit",
+  "preco": 29.9,
+  "custo": 14.8,
+  "variantes": [
+   {
+    "sku": "PL017-M-UNICA",
+    "tam": "M",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   },
+   {
+    "sku": "PL017-GG-UNICA",
+    "tam": "GG",
+    "cor": "Única",
+    "qtd": 2,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL018",
+  "nome": "Camisa 03 Flamengo 26/27",
+  "categoria": "Camisas de time",
+  "preco": 169.9,
+  "custo": 53.96,
+  "variantes": [
+   {
+    "sku": "PL018-G-UNICA",
+    "tam": "G",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   },
+   {
+    "sku": "PL018-GG-UNICA",
+    "tam": "GG",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL019",
+  "nome": "Camisa Flamengo Treino 26/27",
+  "categoria": "Camisas de time",
+  "preco": 169.9,
+  "custo": 75.9,
+  "variantes": [
+   {
+    "sku": "PL019-G-UNICA",
+    "tam": "G",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL020",
+  "nome": "Camisa Fluminense Feminina 26/27",
+  "categoria": "Camisas de time",
+  "preco": 169.9,
+  "custo": 69.8,
+  "variantes": [
+   {
+    "sku": "PL020-M-UNICA",
+    "tam": "M",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL021",
+  "nome": "Camisa Fluminense 26/27",
+  "categoria": "Camisas de time",
+  "preco": 169.9,
+  "custo": 70.41,
+  "variantes": [
+   {
+    "sku": "PL021-GG-UNICA",
+    "tam": "GG",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL022",
+  "nome": "Camisa Palmeiras titular 26/27",
+  "categoria": "Camisas de time",
+  "preco": 169.9,
+  "custo": 75.9,
+  "variantes": [
+   {
+    "sku": "PL022-G-UNICA",
+    "tam": "G",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   },
+   {
+    "sku": "PL022-GG-UNICA",
+    "tam": "GG",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL023",
+  "nome": "Camisa Portugal Ed. Especial 26/27",
+  "categoria": "Camisas de time",
+  "preco": 169.9,
+  "custo": 76.87,
+  "variantes": [
+   {
+    "sku": "PL023-G-UNICA",
+    "tam": "G",
+    "cor": "Única",
+    "qtd": 2,
+    "min": 0
+   },
+   {
+    "sku": "PL023-GG-UNICA",
+    "tam": "GG",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL024",
+  "nome": "Camisa Portugal titular 26/27",
+  "categoria": "Camisas de time",
+  "preco": 169.9,
+  "custo": 76.87,
+  "variantes": [
+   {
+    "sku": "PL024-G-UNICA",
+    "tam": "G",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   },
+   {
+    "sku": "PL024-GG-UNICA",
+    "tam": "GG",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL025",
+  "nome": "Camisa Real Madrid 26/27",
+  "categoria": "Camisas de time",
+  "preco": 169.9,
+  "custo": 69.8,
+  "variantes": [
+   {
+    "sku": "PL025-U-UNICA",
+    "tam": "Único",
+    "cor": "Única",
+    "qtd": 2,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL026",
+  "nome": "Camisa reserva seleção 26/27",
+  "categoria": "Camisas de time",
+  "preco": 120,
+  "custo": 75.9,
+  "variantes": [
+   {
+    "sku": "PL026-G-UNICA",
+    "tam": "G",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL027",
+  "nome": "Camisa São Paulo Reserva 26/27",
+  "categoria": "Camisas de time",
+  "preco": 169.9,
+  "custo": 70.41,
+  "variantes": [
+   {
+    "sku": "PL027-GG-UNICA",
+    "tam": "GG",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL028",
+  "nome": "Camisa França 26/27",
+  "categoria": "Camisas de time",
+  "preco": 169.9,
+  "custo": 92.87,
+  "variantes": [
+   {
+    "sku": "PL028-G-UNICA",
+    "tam": "G",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   },
+   {
+    "sku": "PL028-GG-UNICA",
+    "tam": "GG",
+    "cor": "Única",
+    "qtd": 2,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL029",
+  "nome": "Camisa Brasil 19/20 Feminina",
+  "categoria": "Camisas de time",
+  "preco": 120,
+  "custo": 92.85,
+  "variantes": [
+   {
+    "sku": "PL029-G-UNICA",
+    "tam": "G",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL030",
+  "nome": "Camisa Itália 26/27",
+  "categoria": "Camisas de time",
+  "preco": 169.9,
+  "custo": 76.87,
+  "variantes": [
+   {
+    "sku": "PL030-G-UNICA",
+    "tam": "G",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   },
+   {
+    "sku": "PL030-GG-UNICA",
+    "tam": "GG",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL031",
+  "nome": "Camisa Brasil Reserva Feminina 26/27",
+  "categoria": "Camisas de time",
+  "preco": 120,
+  "custo": 68.05,
+  "variantes": [
+   {
+    "sku": "PL031-M-UNICA",
+    "tam": "M",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   },
+   {
+    "sku": "PL031-G-UNICA",
+    "tam": "G",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL032",
+  "nome": "Camisa Vasco Feminina Branco 26/27",
+  "categoria": "Camisas de time",
+  "preco": 169.9,
+  "custo": 69.8,
+  "variantes": [
+   {
+    "sku": "PL032-M-UNICA",
+    "tam": "M",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL033",
+  "nome": "Camisa Vasco Branca 26/27",
+  "categoria": "Camisas de time",
+  "preco": 169.9,
+  "custo": 75.65,
+  "variantes": [
+   {
+    "sku": "PL033-G-UNICA",
+    "tam": "G",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   },
+   {
+    "sku": "PL033-GG-UNICA",
+    "tam": "GG",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL034",
+  "nome": "Camisa N. Senhora de Nazaré 25/26",
+  "categoria": "Camisas de time",
+  "preco": 169.9,
+  "custo": 72,
+  "variantes": [
+   {
+    "sku": "PL034-G-UNICA",
+    "tam": "G",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL035",
+  "nome": "Camisa Vasco Feminina Preta 26/27",
+  "categoria": "Camisas de time",
+  "preco": 169.9,
+  "custo": 53.1,
+  "variantes": [
+   {
+    "sku": "PL035-P-UNICA",
+    "tam": "P",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   },
+   {
+    "sku": "PL035-G-UNICA",
+    "tam": "G",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL036",
+  "nome": "Camisa Vasco Preta 26/27",
+  "categoria": "Camisas de time",
+  "preco": 169.9,
+  "custo": 69.9,
+  "variantes": [
+   {
+    "sku": "PL036-GG-UNICA",
+    "tam": "GG",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL037",
+  "nome": "Manguito de Compressão Esportivo Preto",
+  "categoria": "Proteção e suporte",
+  "preco": 45.9,
+  "custo": 22.45,
+  "variantes": [
+   {
+    "sku": "PL037-U-BRANCA",
+    "tam": "Único",
+    "cor": "Branca",
+    "qtd": 3,
+    "min": 0
+   },
+   {
+    "sku": "PL037-U-PRETA",
+    "tam": "Único",
+    "cor": "Preta",
+    "qtd": 3,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL038",
+  "nome": "Meia de Algodão Cano Alto Canelado Colorida",
+  "categoria": "Meias",
+  "preco": 45.9,
+  "custo": 22.45,
+  "variantes": [
+   {
+    "sku": "PL038-U-UNICA",
+    "tam": "Único",
+    "cor": "Única",
+    "qtd": 3,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL039",
+  "nome": "Meia Poliamida 10k Azul Royal/Verde Cano Longo",
+  "categoria": "Meias",
+  "preco": 45.9,
+  "custo": 22.45,
+  "variantes": [
+   {
+    "sku": "PL039-U-UNICA",
+    "tam": "Único",
+    "cor": "Única",
+    "qtd": 2,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL040",
+  "nome": "Meia Poliamida 10k Preto/Branco Cano Longo",
+  "categoria": "Meias",
+  "preco": 45.9,
+  "custo": 22.45,
+  "variantes": [
+   {
+    "sku": "PL040-U-UNICA",
+    "tam": "Único",
+    "cor": "Única",
+    "qtd": 8,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL041",
+  "nome": "Meia Poliamida 10k Rosa /Laranja Cano Longo",
+  "categoria": "Meias",
+  "preco": 45.9,
+  "custo": 22.45,
+  "variantes": [
+   {
+    "sku": "PL041-U-UNICA",
+    "tam": "Único",
+    "cor": "Única",
+    "qtd": 2,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL042",
+  "nome": "Meias Anti derrapante",
+  "categoria": "Meias",
+  "preco": 27.9,
+  "custo": 7.45,
+  "variantes": [
+   {
+    "sku": "PL042-U-AZUL",
+    "tam": "Único",
+    "cor": "Azul",
+    "qtd": 4,
+    "min": 0
+   },
+   {
+    "sku": "PL042-U-BRANCA",
+    "tam": "Único",
+    "cor": "Branca",
+    "qtd": 5,
+    "min": 0
+   },
+   {
+    "sku": "PL042-U-LARANJ",
+    "tam": "Único",
+    "cor": "Laranja",
+    "qtd": 2,
+    "min": 0
+   },
+   {
+    "sku": "PL042-U-PRETA",
+    "tam": "Único",
+    "cor": "Preta",
+    "qtd": 14,
+    "min": 0
+   },
+   {
+    "sku": "PL042-U-VERMEL",
+    "tam": "Único",
+    "cor": "Vermelho",
+    "qtd": 2,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL043",
+  "nome": "Meia Poliamida 10k Roxo/ Neon Cano Longo",
+  "categoria": "Meias",
+  "preco": 45.9,
+  "custo": 22.45,
+  "variantes": [
+   {
+    "sku": "PL043-U-UNICA",
+    "tam": "Único",
+    "cor": "Única",
+    "qtd": 3,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL044",
+  "nome": "Meia Poliamida 10k Verde Água/Azulado Cano Longo",
+  "categoria": "Meias",
+  "preco": 45.9,
+  "custo": 22.45,
+  "variantes": [
+   {
+    "sku": "PL044-U-UNICA",
+    "tam": "Único",
+    "cor": "Única",
+    "qtd": 5,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL045",
+  "nome": "Meia Poliamida 21k Preto/Branco Cano Longo",
+  "categoria": "Meias",
+  "preco": 45.9,
+  "custo": 22.45,
+  "variantes": [
+   {
+    "sku": "PL045-U-UNICA",
+    "tam": "Único",
+    "cor": "Única",
+    "qtd": 3,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL046",
+  "nome": "Meia Poliamida 21k Rosa Goiaba/Laranja Cano Longo",
+  "categoria": "Meias",
+  "preco": 45.9,
+  "custo": 22.45,
+  "variantes": [
+   {
+    "sku": "PL046-U-UNICA",
+    "tam": "Único",
+    "cor": "Única",
+    "qtd": 4,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL047",
+  "nome": "Meia Poliamida 21k Roxo/Neon Cano Longo",
+  "categoria": "Meias",
+  "preco": 45.9,
+  "custo": 22.45,
+  "variantes": [
+   {
+    "sku": "PL047-U-UNICA",
+    "tam": "Único",
+    "cor": "Única",
+    "qtd": 2,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL048",
+  "nome": "Meia Poliamida 42k Preto/Branco Cano Longo",
+  "categoria": "Meias",
+  "preco": 45.9,
+  "custo": 22.45,
+  "variantes": [
+   {
+    "sku": "PL048-U-UNICA",
+    "tam": "Único",
+    "cor": "Única",
+    "qtd": 2,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL049",
+  "nome": "Meia Poliamida 42k Rosa Goiaba/Laranja Cano Longo",
+  "categoria": "Meias",
+  "preco": 45.9,
+  "custo": 22.45,
+  "variantes": [
+   {
+    "sku": "PL049-U-UNICA",
+    "tam": "Único",
+    "cor": "Única",
+    "qtd": 3,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL050",
+  "nome": "Meia Poliamida 5k Preto/Branco Cano Longo",
+  "categoria": "Meias",
+  "preco": 45.9,
+  "custo": 22.45,
+  "variantes": [
+   {
+    "sku": "PL050-U-UNICA",
+    "tam": "Único",
+    "cor": "Única",
+    "qtd": 8,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL051",
+  "nome": "Meia Poliamida 5k Roxo/Amarelo Neon Cano Longo",
+  "categoria": "Meias",
+  "preco": 45.9,
+  "custo": 22.45,
+  "variantes": [
+   {
+    "sku": "PL051-U-UNICA",
+    "tam": "Único",
+    "cor": "Única",
+    "qtd": 4,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL052",
+  "nome": "Meia Poliamida 5k Verde/Cinza Azulado Cano Longo",
+  "categoria": "Meias",
+  "preco": 45.9,
+  "custo": 22.45,
+  "variantes": [
+   {
+    "sku": "PL052-U-UNICA",
+    "tam": "Único",
+    "cor": "Única",
+    "qtd": 3,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL053",
+  "nome": "Meia Performance Poliamida Amarelo Neon Cano Longo",
+  "categoria": "Meias",
+  "preco": 45.9,
+  "custo": 22.45,
+  "variantes": [
+   {
+    "sku": "PL053-U-UNICA",
+    "tam": "Único",
+    "cor": "Única",
+    "qtd": 3,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL054",
+  "nome": "Meia Poliamida Azul Turquesa Cano Longo",
+  "categoria": "Meias",
+  "preco": 45.9,
+  "custo": 22.45,
+  "variantes": [
+   {
+    "sku": "PL054-U-UNICA",
+    "tam": "Único",
+    "cor": "Única",
+    "qtd": 3,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL055",
+  "nome": "Meia Poliamida Fé Azul Marinho/Amarelo Neon Cano Longo",
+  "categoria": "Meias",
+  "preco": 45.9,
+  "custo": 22.45,
+  "variantes": [
+   {
+    "sku": "PL055-U-UNICA",
+    "tam": "Único",
+    "cor": "Única",
+    "qtd": 3,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL056",
+  "nome": "Camisa Flamengo Titular 26/27",
+  "categoria": "Camisas de time",
+  "preco": 169.9,
+  "custo": 55.88,
+  "variantes": [
+   {
+    "sku": "PL056-P-UNICA",
+    "tam": "P",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   },
+   {
+    "sku": "PL056-M-UNICA",
+    "tam": "M",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   },
+   {
+    "sku": "PL056-G-UNICA",
+    "tam": "G",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   },
+   {
+    "sku": "PL056-GG-UNICA",
+    "tam": "GG",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   },
+   {
+    "sku": "PL056-G1-UNICA",
+    "tam": "G1",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL057",
+  "nome": "Camisa São Paulo Torcedor New Balance",
+  "categoria": "Camisas de time",
+  "preco": 169.9,
+  "custo": 54.29,
+  "variantes": [
+   {
+    "sku": "PL057-G-UNICA",
+    "tam": "G",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL058",
+  "nome": "Regata NBA usa 6",
+  "categoria": "Regatas NBA",
+  "preco": 79.9,
+  "custo": 36.6,
+  "variantes": [
+   {
+    "sku": "PL058-P-UNICA",
+    "tam": "P",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   },
+   {
+    "sku": "PL058-M-UNICA",
+    "tam": "M",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL059",
+  "nome": "Regata NBA Cleveland 45",
+  "categoria": "Regatas NBA",
+  "preco": 79.9,
+  "custo": 36.6,
+  "variantes": [
+   {
+    "sku": "PL059-M-UNICA",
+    "tam": "M",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL060",
+  "nome": "Regata NBA Vancouver",
+  "categoria": "Regatas NBA",
+  "preco": 79.9,
+  "custo": 36.6,
+  "variantes": [
+   {
+    "sku": "PL060-M-UNICA",
+    "tam": "M",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL061",
+  "nome": "Regata NBA Brooklyn 33",
+  "categoria": "Regatas NBA",
+  "preco": 79.9,
+  "custo": 36.6,
+  "variantes": [
+   {
+    "sku": "PL061-M-UNICA",
+    "tam": "M",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   },
+   {
+    "sku": "PL061-G-UNICA",
+    "tam": "G",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL062",
+  "nome": "Regata NBA phila 23",
+  "categoria": "Regatas NBA",
+  "preco": 79.9,
+  "custo": 36.6,
+  "variantes": [
+   {
+    "sku": "PL062-P-UNICA",
+    "tam": "P",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   },
+   {
+    "sku": "PL062-M-UNICA",
+    "tam": "M",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   },
+   {
+    "sku": "PL062-G-UNICA",
+    "tam": "G",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL063",
+  "nome": "Regata NBA Golden state 30",
+  "categoria": "Regatas NBA",
+  "preco": 79.9,
+  "custo": 36.6,
+  "variantes": [
+   {
+    "sku": "PL063-M-UNICA",
+    "tam": "M",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   },
+   {
+    "sku": "PL063-GG-UNICA",
+    "tam": "GG",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL064",
+  "nome": "Regata NBA PayPal 1",
+  "categoria": "Regatas NBA",
+  "preco": 79.9,
+  "custo": 36.6,
+  "variantes": [
+   {
+    "sku": "PL064-M-UNICA",
+    "tam": "M",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   },
+   {
+    "sku": "PL064-G-UNICA",
+    "tam": "G",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL065",
+  "nome": "Regata NBA Warriors 30",
+  "categoria": "Regatas NBA",
+  "preco": 79.9,
+  "custo": 36.6,
+  "variantes": [
+   {
+    "sku": "PL065-M-UNICA",
+    "tam": "M",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL066",
+  "nome": "Regata NBA Vancouver 12",
+  "categoria": "Regatas NBA",
+  "preco": 79.9,
+  "custo": 36.6,
+  "variantes": [
+   {
+    "sku": "PL066-G-UNICA",
+    "tam": "G",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL067",
+  "nome": "Regata NBA Celtic 0",
+  "categoria": "Regatas NBA",
+  "preco": 79.9,
+  "custo": 36.6,
+  "variantes": [
+   {
+    "sku": "PL067-G-UNICA",
+    "tam": "G",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL068",
+  "nome": "Regata NBA Oklahoma 2",
+  "categoria": "Regatas NBA",
+  "preco": 79.9,
+  "custo": 36.6,
+  "variantes": [
+   {
+    "sku": "PL068-G-UNICA",
+    "tam": "G",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   },
+   {
+    "sku": "PL068-GG-UNICA",
+    "tam": "GG",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL069",
+  "nome": "Regata NBA elite 23",
+  "categoria": "Regatas NBA",
+  "preco": 79.9,
+  "custo": 36.6,
+  "variantes": [
+   {
+    "sku": "PL069-P-UNICA",
+    "tam": "P",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   },
+   {
+    "sku": "PL069-G-UNICA",
+    "tam": "G",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL070",
+  "nome": "Regata NBA Motorola 14",
+  "categoria": "Regatas NBA",
+  "preco": 79.9,
+  "custo": 36.6,
+  "variantes": [
+   {
+    "sku": "PL070-G-UNICA",
+    "tam": "G",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL071",
+  "nome": "Regata NBA Celtics 0",
+  "categoria": "Regatas NBA",
+  "preco": 79.9,
+  "custo": 36.6,
+  "variantes": [
+   {
+    "sku": "PL071-P-UNICA",
+    "tam": "P",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   },
+   {
+    "sku": "PL071-G-UNICA",
+    "tam": "G",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL072",
+  "nome": "Regata NBA Celtics branca 0",
+  "categoria": "Regatas NBA",
+  "preco": 79.9,
+  "custo": 36.6,
+  "variantes": [
+   {
+    "sku": "PL072-G-UNICA",
+    "tam": "G",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL073",
+  "nome": "Regata NBA New York 11",
+  "categoria": "Regatas NBA",
+  "preco": 79.9,
+  "custo": 36.6,
+  "variantes": [
+   {
+    "sku": "PL073-U-UNICA",
+    "tam": "Único",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL074",
+  "nome": "Regata NBA Brooklyn 30",
+  "categoria": "Regatas NBA",
+  "preco": 79.9,
+  "custo": 36.6,
+  "variantes": [
+   {
+    "sku": "PL074-GG-UNICA",
+    "tam": "GG",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL075",
+  "nome": "Regata NBA Paris 23",
+  "categoria": "Regatas NBA",
+  "preco": 79.9,
+  "custo": 36.6,
+  "variantes": [
+   {
+    "sku": "PL075-GG-UNICA",
+    "tam": "GG",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL076",
+  "nome": "Regata NBA Miami 14",
+  "categoria": "Regatas NBA",
+  "preco": 79.9,
+  "custo": 36.6,
+  "variantes": [
+   {
+    "sku": "PL076-GG-UNICA",
+    "tam": "GG",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL077",
+  "nome": "Camisa Vasco nacional 26/27",
+  "categoria": "Camisas de time",
+  "preco": 89.9,
+  "custo": 41.9,
+  "variantes": [
+   {
+    "sku": "PL077-M-UNICA",
+    "tam": "M",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   },
+   {
+    "sku": "PL077-G-UNICA",
+    "tam": "G",
+    "cor": "Única",
+    "qtd": 2,
+    "min": 0
+   },
+   {
+    "sku": "PL077-GG-UNICA",
+    "tam": "GG",
+    "cor": "Única",
+    "qtd": 2,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL078",
+  "nome": "Camisa Flamengo Nacional 26/27",
+  "categoria": "Camisas de time",
+  "preco": 89.9,
+  "custo": 41.9,
+  "variantes": [
+   {
+    "sku": "PL078-P-UNICA",
+    "tam": "P",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   },
+   {
+    "sku": "PL078-M-UNICA",
+    "tam": "M",
+    "cor": "Única",
+    "qtd": 3,
+    "min": 0
+   },
+   {
+    "sku": "PL078-G-UNICA",
+    "tam": "G",
+    "cor": "Única",
+    "qtd": 2,
+    "min": 0
+   },
+   {
+    "sku": "PL078-GG-UNICA",
+    "tam": "GG",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL079",
+  "nome": "Camisa Palmeiras Nacional",
+  "categoria": "Camisas de time",
+  "preco": 89.9,
+  "custo": 41.9,
+  "variantes": [
+   {
+    "sku": "PL079-G-UNICA",
+    "tam": "G",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   },
+   {
+    "sku": "PL079-GG-UNICA",
+    "tam": "GG",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL080",
+  "nome": "Camisa Fluminense nacional 26/27",
+  "categoria": "Camisas de time",
+  "preco": 89.9,
+  "custo": 41.9,
+  "variantes": [
+   {
+    "sku": "PL080-G-UNICA",
+    "tam": "G",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   },
+   {
+    "sku": "PL080-GG-UNICA",
+    "tam": "GG",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL081",
+  "nome": "Camisa São Paulo Nacional 26/27",
+  "categoria": "Camisas de time",
+  "preco": 89.9,
+  "custo": 41.9,
+  "variantes": [
+   {
+    "sku": "PL081-G-UNICA",
+    "tam": "G",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   },
+   {
+    "sku": "PL081-GG-UNICA",
+    "tam": "GG",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL082",
+  "nome": "Camisa Corinthians Nacional 26/27",
+  "categoria": "Camisas de time",
+  "preco": 89.9,
+  "custo": 41.9,
+  "variantes": [
+   {
+    "sku": "PL082-G-UNICA",
+    "tam": "G",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   },
+   {
+    "sku": "PL082-GG-UNICA",
+    "tam": "GG",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL083",
+  "nome": "Camisa Cruzeiro nacional 26/27",
+  "categoria": "Camisas de time",
+  "preco": 89.9,
+  "custo": 41.9,
+  "variantes": [
+   {
+    "sku": "PL083-G-UNICA",
+    "tam": "G",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   },
+   {
+    "sku": "PL083-GG-UNICA",
+    "tam": "GG",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL084",
+  "nome": "Camisa Flamengo Feminina Nacional 26/27",
+  "categoria": "Camisas de time",
+  "preco": 89.9,
+  "custo": 41.9,
+  "variantes": [
+   {
+    "sku": "PL084-P-UNICA",
+    "tam": "P",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   },
+   {
+    "sku": "PL084-M-UNICA",
+    "tam": "M",
+    "cor": "Única",
+    "qtd": 3,
+    "min": 0
+   },
+   {
+    "sku": "PL084-G-UNICA",
+    "tam": "G",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL085",
+  "nome": "Fone E6s",
+  "categoria": "Fones",
+  "preco": 35,
+  "custo": 15.9,
+  "variantes": [
+   {
+    "sku": "PL085-U-UNICA",
+    "tam": "Único",
+    "cor": "Única",
+    "qtd": 2,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL086",
+  "nome": "Joelheira de Compressão esportiva",
+  "categoria": "Proteção e suporte",
+  "preco": 25,
+  "custo": 15,
+  "variantes": [
+   {
+    "sku": "PL086-U-UNICA",
+    "tam": "Único",
+    "cor": "Única",
+    "qtd": 23,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL087",
+  "nome": "Joelheira de Suporte Ajustável",
+  "categoria": "Proteção e suporte",
+  "preco": 35,
+  "custo": 12.99,
+  "variantes": [
+   {
+    "sku": "PL087-U-UNICA",
+    "tam": "Único",
+    "cor": "Única",
+    "qtd": 2,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL088",
+  "nome": "Joelheira Neoprene",
+  "categoria": "Proteção e suporte",
+  "preco": 19.9,
+  "custo": 12,
+  "variantes": [
+   {
+    "sku": "PL088-U-UNICA",
+    "tam": "Único",
+    "cor": "Única",
+    "qtd": 4,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL089",
+  "nome": "Caneleira Adulto",
+  "categoria": "Proteção e suporte",
+  "preco": 29.9,
+  "custo": 12.9,
+  "variantes": [
+   {
+    "sku": "PL089-U-PRETA",
+    "tam": "Único",
+    "cor": "Preta",
+    "qtd": 3,
+    "min": 0
+   },
+   {
+    "sku": "PL089-U-VERDE",
+    "tam": "Único",
+    "cor": "Verde",
+    "qtd": 4,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL090",
+  "nome": "Caneleira Infantil Preta",
+  "categoria": "Proteção e suporte",
+  "preco": 29.9,
+  "custo": 12.9,
+  "variantes": [
+   {
+    "sku": "PL090-U-UNICA",
+    "tam": "Único",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL091",
+  "nome": "Cotoveleira de Compressão Esportiva",
+  "categoria": "Proteção e suporte",
+  "preco": 29.9,
+  "custo": 12.9,
+  "variantes": [
+   {
+    "sku": "PL091-U-UNICA",
+    "tam": "Único",
+    "cor": "Única",
+    "qtd": 3,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL092",
+  "nome": "Faixa Braçadeira de Capitão Infantil",
+  "categoria": "Acessórios",
+  "preco": 19.9,
+  "custo": 8.9,
+  "variantes": [
+   {
+    "sku": "PL092-U-UNICA",
+    "tam": "Único",
+    "cor": "Única",
+    "qtd": 7,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL093",
+  "nome": "Fone Kapbom branco",
+  "categoria": "Fones",
+  "preco": 79.9,
+  "custo": 39.9,
+  "variantes": [
+   {
+    "sku": "PL093-U-UNICA",
+    "tam": "Único",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL094",
+  "nome": "Fone P9",
+  "categoria": "Fones",
+  "preco": 49.9,
+  "custo": 19.9,
+  "variantes": [
+   {
+    "sku": "PL094-U-UNICA",
+    "tam": "Único",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL095",
+  "nome": "Kinesiology Tape",
+  "categoria": "Proteção e suporte",
+  "preco": 19.9,
+  "custo": 9,
+  "variantes": [
+   {
+    "sku": "PL095-U-AZUL",
+    "tam": "Único",
+    "cor": "Azul",
+    "qtd": 2,
+    "min": 0
+   },
+   {
+    "sku": "PL095-U-VERDE",
+    "tam": "Único",
+    "cor": "Verde",
+    "qtd": 3,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL096",
+  "nome": "Meia Poliamida Preto/Laranja Cano Longo",
+  "categoria": "Meias",
+  "preco": 45.9,
+  "custo": 22.45,
+  "variantes": [
+   {
+    "sku": "PL096-U-UNICA",
+    "tam": "Único",
+    "cor": "Única",
+    "qtd": 3,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL097",
+  "nome": "Meia Poliamida Preto/Vermelho Cano Curto",
+  "categoria": "Meias",
+  "preco": 32.9,
+  "custo": 14.5,
+  "variantes": [
+   {
+    "sku": "PL097-U-UNICA",
+    "tam": "Único",
+    "cor": "Única",
+    "qtd": 3,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL098",
+  "nome": "Meia Performance Poliamida Pride Preto Cano Longo",
+  "categoria": "Meias",
+  "preco": 45.9,
+  "custo": 22.45,
+  "variantes": [
+   {
+    "sku": "PL098-U-BRANCA",
+    "tam": "Único",
+    "cor": "Branca",
+    "qtd": 1,
+    "min": 0
+   },
+   {
+    "sku": "PL098-U-PRETA",
+    "tam": "Único",
+    "cor": "Preta",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL099",
+  "nome": "Munhequeira de Compressão com suporte para as mãos",
+  "categoria": "Proteção e suporte",
+  "preco": 19.9,
+  "custo": 6.99,
+  "variantes": [
+   {
+    "sku": "PL099-U-UNICA",
+    "tam": "Único",
+    "cor": "Única",
+    "qtd": 5,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL100",
+  "nome": "Munhequeira Elástica com Ajuste em Velcro",
+  "categoria": "Proteção e suporte",
+  "preco": 15.9,
+  "custo": 6.99,
+  "variantes": [
+   {
+    "sku": "PL100-U-UNICA",
+    "tam": "Único",
+    "cor": "Única",
+    "qtd": 8,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL101",
+  "nome": "Ombreira Oroterápica",
+  "categoria": "Proteção e suporte",
+  "preco": 25.9,
+  "custo": 13.9,
+  "variantes": [
+   {
+    "sku": "PL101-U-UNICA",
+    "tam": "Único",
+    "cor": "Única",
+    "qtd": 4,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL102",
+  "nome": "Touca de Gel para Alívio de Dores",
+  "categoria": "Proteção e suporte",
+  "preco": 29.9,
+  "custo": 19.9,
+  "variantes": [
+   {
+    "sku": "PL102-U-UNICA",
+    "tam": "Único",
+    "cor": "Única",
+    "qtd": 5,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL103",
+  "nome": "Camisa Flamengo 03 Feminina 26/27",
+  "categoria": "Camisas de time",
+  "preco": 169.9,
+  "custo": 53.96,
+  "variantes": [
+   {
+    "sku": "PL103-M-UNICA",
+    "tam": "M",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL104",
+  "nome": "Camisa Flamengo Retrô 1992",
+  "categoria": "Camisas de time",
+  "preco": 169.9,
+  "custo": 85.97,
+  "variantes": [
+   {
+    "sku": "PL104-P-UNICA",
+    "tam": "P",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL105",
+  "nome": "Camisa Flamengo Feminina titular 26/27",
+  "categoria": "Camisas de time",
+  "preco": 169.9,
+  "custo": 54.31,
+  "variantes": [
+   {
+    "sku": "PL105-P-UNICA",
+    "tam": "P",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   },
+   {
+    "sku": "PL105-M-UNICA",
+    "tam": "M",
+    "cor": "Única",
+    "qtd": 2,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL106",
+  "nome": "Camisa Inter de Milão 26/27",
+  "categoria": "Camisas de time",
+  "preco": 169.9,
+  "custo": 54.29,
+  "variantes": [
+   {
+    "sku": "PL106-P-UNICA",
+    "tam": "P",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL107",
+  "nome": "Camisa Trydfit Azul escuro",
+  "categoria": "Camisetas Dry Fit",
+  "preco": 45.9,
+  "custo": 25,
+  "variantes": [
+   {
+    "sku": "PL107-G-UNICA",
+    "tam": "G",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL108",
+  "nome": "Camisa Trydfit bege",
+  "categoria": "Camisetas Dry Fit",
+  "preco": 45.9,
+  "custo": 25,
+  "variantes": [
+   {
+    "sku": "PL108-GG-UNICA",
+    "tam": "GG",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL109",
+  "nome": "Camisa Trydfit cinza",
+  "categoria": "Camisetas Dry Fit",
+  "preco": 45.9,
+  "custo": 25,
+  "variantes": [
+   {
+    "sku": "PL109-G-UNICA",
+    "tam": "G",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   },
+   {
+    "sku": "PL109-GG-UNICA",
+    "tam": "GG",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL110",
+  "nome": "Camisa Trydfit Azul Piscina",
+  "categoria": "Camisetas Dry Fit",
+  "preco": 45.9,
+  "custo": 25,
+  "variantes": [
+   {
+    "sku": "PL110-M-UNICA",
+    "tam": "M",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   },
+   {
+    "sku": "PL110-G-UNICA",
+    "tam": "G",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL111",
+  "nome": "Camisa Trydfit Turquesa",
+  "categoria": "Camisetas Dry Fit",
+  "preco": 45.9,
+  "custo": 25,
+  "variantes": [
+   {
+    "sku": "PL111-M-UNICA",
+    "tam": "M",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL112",
+  "nome": "Camisa Trydfit preta",
+  "categoria": "Camisetas Dry Fit",
+  "preco": 45.9,
+  "custo": 25,
+  "variantes": [
+   {
+    "sku": "PL112-M-UNICA",
+    "tam": "M",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   },
+   {
+    "sku": "PL112-G-UNICA",
+    "tam": "G",
+    "cor": "Única",
+    "qtd": 2,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL113",
+  "nome": "Camiseta Trydfit Azul marinho",
+  "categoria": "Camisetas Dry Fit",
+  "preco": 45.9,
+  "custo": 25,
+  "variantes": [
+   {
+    "sku": "PL113-G-UNICA",
+    "tam": "G",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   },
+   {
+    "sku": "PL113-GG-UNICA",
+    "tam": "GG",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ },
+ {
+  "id": "PL114",
+  "nome": "Camiseta Trydfit Branca",
+  "categoria": "Camisetas Dry Fit",
+  "preco": 45.9,
+  "custo": 25,
+  "variantes": [
+   {
+    "sku": "PL114-M-UNICA",
+    "tam": "M",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   },
+   {
+    "sku": "PL114-G-UNICA",
+    "tam": "G",
+    "cor": "Única",
+    "qtd": 2,
+    "min": 0
+   },
+   {
+    "sku": "PL114-GG-UNICA",
+    "tam": "GG",
+    "cor": "Única",
+    "qtd": 1,
+    "min": 0
+   }
+  ]
+ }
+]

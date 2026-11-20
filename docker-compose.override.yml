@@ -1,0 +1,7 @@
+services:
+  api:
+    environment:
+      COOKIE_SECURE: "false"     # local é http; sem isso o login não fica salvo
+  db:
+    ports:
+      - "127.0.0.1:5432:5432"    # para o DBeaver (host localhost, porta 5432, sem túnel)

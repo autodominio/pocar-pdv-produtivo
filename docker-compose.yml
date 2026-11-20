@@ -1,0 +1,66 @@
+# Backend do Pocar Sport na VPS (o frontend fica na Vercel e repassa /api para cá):  docker compose up -d --build
+# Antes: cp .env.example .env  e preencha a senha do banco e os usuários.
+# O HTTPS fica com o nginx + certbot que já existem na VPS (deploy/nginx-api.conf).
+services:
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: pocar
+      POSTGRES_USER: pocar
+      POSTGRES_PASSWORD: ${DB_PASSWORD:?Defina DB_PASSWORD no arquivo .env}
+      TZ: America/Sao_Paulo
+      PGTZ: America/Sao_Paulo
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U pocar -d pocar"]
+      interval: 5s
+      timeout: 3s
+      retries: 20
+
+  api:
+    build: ./backend
+    restart: unless-stopped
+    environment:
+      DB_URL: jdbc:postgresql://db:5432/pocar
+      DB_USER: pocar
+      DB_PASSWORD: ${DB_PASSWORD}
+      APP_USUARIOS: ${APP_USUARIOS:-}
+      COOKIE_SECURE: "true"
+      TZ: America/Sao_Paulo
+    # só a própria VPS acessa a porta 8080; quem recebe de fora é o nginx
+    ports:
+      - "127.0.0.1:8080:8080"
+    # mantém os logs do container em no máximo 3 arquivos de 10 MB
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+    depends_on:
+      db:
+        condition: service_healthy
+
+  # Backup diário do banco em ./backups (mantém os últimos 30 dias).
+  backup:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      PGHOST: db
+      PGUSER: pocar
+      PGDATABASE: pocar
+      PGPASSWORD: ${DB_PASSWORD}
+      BACKUP_DIAS: ${BACKUP_DIAS:-30}
+      BACKUP_HORA: ${BACKUP_HORA:-03}
+      TZ: America/Sao_Paulo
+    volumes:
+      - ./deploy/backup.sh:/backup.sh:ro
+      - ./backups:/backups
+    entrypoint: ["/bin/sh", "/backup.sh"]
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  db_data:

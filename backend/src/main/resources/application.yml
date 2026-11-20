@@ -1,0 +1,45 @@
+server:
+  port: 8080
+  # Atrás do nginx da VPS: respeita X-Forwarded-Proto/For
+  forward-headers-strategy: framework
+  servlet:
+    session:
+      timeout: 12h
+      cookie:
+        name: POCAR_SESSAO
+        http-only: true
+        same-site: lax
+        secure: ${COOKIE_SECURE:true}
+
+spring:
+  datasource:
+    url: ${DB_URL:jdbc:postgresql://localhost:5432/pocar}
+    username: ${DB_USER:pocar}
+    password: ${DB_PASSWORD:pocar}
+  flyway:
+    enabled: true
+  session:
+    timeout: 12h
+    jdbc:
+      # as tabelas da sessão são criadas pela migration V1
+      initialize-schema: never
+  jackson:
+    time-zone: America/Sao_Paulo
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health
+
+app:
+  zona: America/Sao_Paulo
+  # Usuários criados na primeira subida: "login:Nome:senha;login2:Nome2:senha2".
+  # Só cria quem ainda não existe; depois cada um troca a senha pelo sistema.
+  usuarios: ${APP_USUARIOS:}
+
+logging:
+  level:
+    root: INFO
+    # uma linha por chamada à API (LogRequisicoesFilter); WARN deixa só os erros
+    api.requisicoes: ${LOG_REQUISICOES:INFO}
