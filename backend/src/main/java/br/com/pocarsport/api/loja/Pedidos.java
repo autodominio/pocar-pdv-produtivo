@@ -16,6 +16,10 @@ public final class Pedidos {
                               List<String> tamanhos, List<String> cores) {
     }
 
+    /** Edição de produto. minimo vazio = não muda o estoque mínimo das variações. */
+    public record EdicaoProduto(String nome, String categoria, BigDecimal preco, BigDecimal custo, Integer minimo) {
+    }
+
     public record EntradaMercadoria(String sku, Integer qtd, BigDecimal custo, String fornecedor, Boolean gerarConta, LocalDate venc) {
     }
 

@@ -100,6 +100,58 @@ public class CatalogoService {
         return r;
     }
 
+    /**
+     * Edita nome, categoria, preço, custo e (se informado) o estoque mínimo de todas as variações.
+     * Vendas já feitas não mudam: cada item vendido guarda o preço e o custo do momento da venda.
+     */
+    @Transactional
+    public void editarProduto(String codigo, Pedidos.EdicaoProduto p, Contexto ctx) {
+        Map<String, Object> atual = db.um("select nome, categoria, preco, custo from produto where codigo = ? for update", codigo)
+            .orElseThrow(() -> new RegraException("Produto não encontrado."));
+        String nome = limpo(p.nome());
+        String categoria = limpo(p.categoria());
+        if (nome.isEmpty()) {
+            throw new RegraException("Informe o nome do produto.");
+        }
+        if (categoria.isEmpty()) {
+            throw new RegraException("Informe a categoria.");
+        }
+        if (!Regras.positivo(p.preco())) {
+            throw new RegraException("Informe o preço de venda.");
+        }
+        BigDecimal preco = r2(p.preco());
+        BigDecimal custo = p.custo() == null ? BigDecimal.ZERO : r2(p.custo());
+        if (custo.signum() < 0) {
+            throw new RegraException("O custo não pode ser negativo.");
+        }
+        if (p.minimo() != null && p.minimo() < 0) {
+            throw new RegraException("O estoque mínimo não pode ser negativo.");
+        }
+
+        List<String> mudancas = new ArrayList<>();
+        if (!nome.equals(Banco.txt(atual, "nome"))) {
+            mudancas.add("nome: " + Banco.txt(atual, "nome") + " → " + nome);
+        }
+        if (!categoria.equals(Banco.txt(atual, "categoria"))) {
+            mudancas.add("categoria: " + Banco.txt(atual, "categoria") + " → " + categoria);
+        }
+        if (Banco.dec(atual, "preco").compareTo(preco) != 0) {
+            mudancas.add("preço: " + brl(Banco.dec(atual, "preco")) + " → " + brl(preco));
+        }
+        if (Banco.dec(atual, "custo").compareTo(custo) != 0) {
+            mudancas.add("custo: " + brl(Banco.dec(atual, "custo")) + " → " + brl(custo));
+        }
+        if (p.minimo() != null && db.contar("select count(*) from variante where produto_codigo = ? and estoque_minimo <> ?", codigo, p.minimo()) > 0) {
+            mudancas.add("estoque mínimo: " + p.minimo() + " em todas as variações");
+            db.executar("update variante set estoque_minimo = ? where produto_codigo = ?", p.minimo(), codigo);
+        }
+        if (mudancas.isEmpty()) {
+            return;
+        }
+        db.executar("update produto set nome = ?, categoria = ?, preco = ?, custo = ? where codigo = ?", nome, categoria, preco, custo, codigo);
+        auditoria.registrar(ctx.usuario(), "Produto alterado", codigo + " " + nome + ": " + String.join("; ", mudancas), null);
+    }
+
     /** Entrada de mercadoria: soma no estoque e, se pedido, cria a conta a pagar ao fornecedor. */
     @Transactional
     public void entrada(Pedidos.EntradaMercadoria e, Contexto ctx) {

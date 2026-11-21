@@ -48,6 +48,7 @@ export const api = {
   reiniciar: senhaConfirmacao => pedir('POST', '/api/loja/reiniciar', { senhaConfirmacao }),
   registrarTela: (acao, detalhe) => pedir('POST', '/api/loja/registros', { acao, detalhe }),
   novoProduto: p => pedir('POST', '/api/produtos', p),
+  editarProduto: (codigo, p) => pedir('PUT', `/api/produtos/${encodeURIComponent(codigo)}`, p),
   entradaMercadoria: p => pedir('POST', '/api/estoque/entradas', p),
   salvarCliente: (id, p) => id ? pedir('PUT', `/api/clientes/${id}`, p) : pedir('POST', '/api/clientes', p),
   abrirCaixa: p => pedir('POST', '/api/caixa/abrir', p),

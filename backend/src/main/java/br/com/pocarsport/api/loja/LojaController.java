@@ -112,6 +112,12 @@ public class LojaController {
         return catalogo.novoProduto(p, ctx(auth, "estoque"));
     }
 
+    @PutMapping("/produtos/{codigo}")
+    public Map<String, Object> editarProduto(@PathVariable String codigo, @RequestBody Pedidos.EdicaoProduto p, Authentication auth) {
+        catalogo.editarProduto(codigo, p, ctx(auth, "estoque"));
+        return ok();
+    }
+
     @PostMapping("/estoque/entradas")
     public Map<String, Object> entrada(@RequestBody Pedidos.EntradaMercadoria p, Authentication auth) {
         catalogo.entrada(p, ctx(auth, "estoque"));

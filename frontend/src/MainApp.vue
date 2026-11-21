@@ -27,6 +27,7 @@ import PickerModal from '@/components/modals/PickerModal.vue';
 import ReciboModal from '@/components/modals/ReciboModal.vue';
 import EntradaModal from '@/components/modals/EntradaModal.vue';
 import NovoProdutoModal from '@/components/modals/NovoProdutoModal.vue';
+import EditarProdutoModal from '@/components/modals/EditarProdutoModal.vue';
 import LancamentoModal from '@/components/modals/LancamentoModal.vue';
 import MetasModal from '@/components/modals/MetasModal.vue';
 import ClienteFichaModal from '@/components/modals/ClienteFichaModal.vue';
@@ -104,6 +105,7 @@ onBeforeUnmount(() => { window.removeEventListener('hashchange', ui.onHash); win
   <ReciboModal />
   <EntradaModal />
   <NovoProdutoModal />
+  <EditarProdutoModal />
   <LancamentoModal />
   <MetasModal />
   <ClienteFichaModal />

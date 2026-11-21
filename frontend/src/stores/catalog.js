@@ -60,6 +60,25 @@ export const useCatalogStore = defineStore('catalog', () => {
     notify(`Produto ${r.id} cadastrado com ${r.codigos} códigos de barras. Lance a entrada de mercadoria e imprima as etiquetas.`);
   };
 
-  return { categorias, variantIndex, variantPorCodigo, variantOf, lowStock, estq, est, estProdutos, toggleExp, vendidas30, movsRecentes,
+  /* ---------- editar produto (vendas já feitas continuam com o preço da época) ---------- */
+  const edicao = reactive({ open: false, codigo: '', nome: '', categoria: '', custo: null, preco: null, min: null, minUnico: true, precoAntes: 0, custoAntes: 0 });
+  const edicaoValida = computed(() => edicao.nome.trim() && edicao.categoria.trim() && edicao.preco > 0 && (edicao.custo || 0) >= 0
+    && (edicao.min === null || edicao.min === '' || edicao.min >= 0));
+  const openEdicao = codigo => {
+    const p = state.products.find(x => x.id === codigo); if (!p) return;
+    const mins = [...new Set(p.variantes.map(v => v.min))];
+    Object.assign(edicao, { open: true, codigo: p.id, nome: p.nome, categoria: p.categoria, custo: p.custo, preco: p.preco,
+      min: mins.length === 1 ? mins[0] : null, minUnico: mins.length === 1, precoAntes: p.preco, custoAntes: p.custo });
+  };
+  const salvarEdicao = async () => {
+    if (!edicaoValida.value) return;
+    const minimo = edicao.min === null || edicao.min === '' ? null : Number(edicao.min);
+    const p = { nome: edicao.nome.trim(), categoria: edicao.categoria.trim(), preco: round2(edicao.preco), custo: round2(edicao.custo || 0), minimo };
+    if (!await db.executar(() => api.editarProduto(edicao.codigo, p))) return;
+    edicao.open = false;
+    notify(p.preco !== edicao.precoAntes ? `Preço de ${p.nome} agora é ${brl(p.preco)}.` : `Produto ${p.nome} atualizado.`);
+  };
+
+  return { edicao, edicaoValida, openEdicao, salvarEdicao, categorias, variantIndex, variantPorCodigo, variantOf, lowStock, estq, est, estProdutos, toggleExp, vendidas30, movsRecentes,
     entrada, entradaProd, onEntradaProd, openEntrada, salvarEntrada, novo, novoCores, novoValido, openNovo, salvarNovo };
 });

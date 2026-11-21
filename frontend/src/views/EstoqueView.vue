@@ -8,7 +8,7 @@ import { useCatalogStore } from '@/stores/catalog';
 import { useEtiquetasStore } from '@/stores/etiquetas';
 
 const { categorias, lowStock, estq, est, estProdutos, movsRecentes } = storeToRefs(useCatalogStore());
-const { toggleExp, vendidas30, openEntrada, openNovo } = useCatalogStore();
+const { toggleExp, vendidas30, openEntrada, openNovo, openEdicao } = useCatalogStore();
 const { openEtiquetas } = useEtiquetasStore();
 </script>
 
@@ -52,9 +52,9 @@ const { openEtiquetas } = useEtiquetasStore();
                         <td v-for="t in tamsOf(p)" :key="t"><span class="q-cell" :class="qClass(p,t,c)">{{ qtyAt(p,t,c) }}</span></td></tr></tbody>
                     </table>
                     <div style="display:grid;gap:8px;font-size:14px">
-                      <div class="muted">Estoque mínimo por variação: {{ p.variantes[0].min }} peças</div>
+                      <div class="muted">Estoque mínimo por variação: {{ new Set(p.variantes.map(v => v.min)).size === 1 ? p.variantes[0].min + ' peças' : 'varia por variação' }}</div>
                       <div class="muted">Vendidas nos últimos 30 dias: <b style="color:var(--ink)">{{ vendidas30(p.id) }}</b></div>
-                      <div class="row" style="gap:6px"><button class="btn sm" @click.stop="openEntrada(p.id)">Lançar entrada deste produto</button><button class="btn sm" @click.stop="openEtiquetas(p.id)">Etiquetas deste produto</button></div>
+                      <div class="row" style="gap:6px"><button class="btn sm primary" @click.stop="openEdicao(p.id)">Editar produto</button><button class="btn sm" @click.stop="openEntrada(p.id)">Lançar entrada deste produto</button><button class="btn sm" @click.stop="openEtiquetas(p.id)">Etiquetas deste produto</button></div>
                       <table class="codigos">
                         <thead><tr><th>Variação</th><th>Código (SKU)</th><th>Código de barras</th></tr></thead>
                         <tbody><tr v-for="v in p.variantes" :key="v.sku"><td>{{ v.tam === 'Único' ? v.cor : v.tam + ', ' + v.cor }}</td><td class="num">{{ v.sku }}</td><td class="num">{{ v.codigoBarras }}</td></tr></tbody>
