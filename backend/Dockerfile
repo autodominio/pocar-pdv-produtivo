@@ -13,6 +13,6 @@ WORKDIR /app
 COPY --from=build /app/target/pocar-sport-api.jar app.jar
 USER app
 EXPOSE 8080
-ENV JAVA_OPTS="-XX:MaxRAMPercentage=70"
+ENV JAVA_OPTS="-XX:MaxRAMPercentage=70 -XX:-UseBASE64Intrinsics"
 HEALTHCHECK --interval=30s --timeout=5s --start-period=60s CMD wget -qO- http://127.0.0.1:8080/actuator/health | grep -q UP || exit 1
 ENTRYPOINT ["sh", "-c", "exec java $JAVA_OPTS -jar app.jar"]
