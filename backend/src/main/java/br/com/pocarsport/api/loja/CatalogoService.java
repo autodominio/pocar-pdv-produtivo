@@ -152,13 +152,50 @@ public class CatalogoService {
         auditoria.registrar(ctx.usuario(), "Produto alterado", codigo + " " + nome + ": " + String.join("; ", mudancas), null);
     }
 
-    /** Entrada de mercadoria: soma no estoque e, se pedido, cria a conta a pagar ao fornecedor. */
+    /**
+     * Cria uma variação (tamanho + cor) num produto que já existe, com estoque zero e código de barras novo.
+     * O estoque mínimo é o mais usado nas outras variações do produto.
+     */
+    String novaVariacao(String produto, String tamanhoInformado, String corInformada, Contexto ctx) {
+        Map<String, Object> p = db.um("select codigo, nome from produto where codigo = ? for update", produto)
+            .orElseThrow(() -> new RegraException("Produto não encontrado."));
+        String tamanho = limpo(tamanhoInformado);
+        tamanho = tamanho.equalsIgnoreCase("único") || tamanho.equalsIgnoreCase("unico") ? "Único" : tamanho.toUpperCase(java.util.Locale.ROOT);
+        String cor = limpo(corInformada);
+        if (tamanho.isEmpty() || cor.isEmpty()) {
+            throw new RegraException("Informe o tamanho e a cor da nova variação.");
+        }
+        if (!tamanho.matches("[\\p{L}\\p{N}]{1,10}")) {
+            throw new RegraException("O tamanho deve ter só letras e números (até 10), como G, GG, 38 ou Único.");
+        }
+        if (Regras.slug(cor).isEmpty()) {
+            throw new RegraException("A cor precisa ter letras.");
+        }
+        if (db.contar("select count(*) from variante where produto_codigo = ? and lower(tamanho) = lower(?) and lower(cor) = lower(?)", produto, tamanho, cor) > 0) {
+            throw new RegraException("Esta variação já existe. Escolha-a na lista.");
+        }
+        String sku = Regras.sku(produto, tamanho, cor);
+        if (db.contar("select count(*) from variante where sku = ?", sku) > 0) {
+            throw new RegraException("A cor \"" + cor + "\" gera o mesmo código de outra cor parecida deste produto. Diferencie o nome da cor.");
+        }
+        long minimo = db.contar("select coalesce((select estoque_minimo from variante where produto_codigo = ? group by estoque_minimo order by count(*) desc, estoque_minimo limit 1), 0)", produto);
+        String codigoBarras = novoCodigoBarras();
+        db.executar("insert into variante (sku, produto_codigo, tamanho, cor, qtd, estoque_minimo, codigo_barras, ordem) values (?, ?, ?, ?, 0, ?, ?, ?)",
+            sku, produto, tamanho, cor, minimo, codigoBarras, Regras.ordemTamanho(tamanho));
+        auditoria.registrar(ctx.usuario(), "Variação cadastrada", produto + " " + Banco.txt(p, "nome") + ": " + tamanho + ", " + cor
+            + " (código de barras " + codigoBarras + ")", null);
+        return sku;
+    }
+
+    /** Entrada de mercadoria: soma no estoque e, se pedido, cria a conta a pagar ao fornecedor. Devolve o sku e se a variação é nova. */
     @Transactional
-    public void entrada(Pedidos.EntradaMercadoria e, Contexto ctx) {
+    public Map<String, Object> entrada(Pedidos.EntradaMercadoria e, Contexto ctx) {
         if (e.qtd() == null || e.qtd() <= 0) {
             throw new RegraException("Informe a quantidade que chegou.");
         }
-        Map<String, Object> v = db.um("select v.sku, v.tamanho, v.cor, p.nome from variante v join produto p on p.codigo = v.produto_codigo where v.sku = ? for update of v", e.sku())
+        boolean nova = (e.sku() == null || e.sku().isBlank()) && e.produto() != null && !e.produto().isBlank();
+        String skuEntrada = nova ? novaVariacao(e.produto(), e.tamanho(), e.cor(), ctx) : e.sku();
+        Map<String, Object> v = db.um("select v.sku, v.tamanho, v.cor, v.codigo_barras, p.nome from variante v join produto p on p.codigo = v.produto_codigo where v.sku = ? for update of v", skuEntrada)
             .orElseThrow(() -> new RegraException("Variação de produto não encontrada."));
         String fornecedor = limpo(e.fornecedor());
         BigDecimal custo = e.custo() == null ? BigDecimal.ZERO : r2(e.custo());
@@ -169,9 +206,9 @@ public class CatalogoService {
         if (gerarConta && e.venc() == null) {
             throw new RegraException("Informe o vencimento da conta a pagar.");
         }
-        db.executar("update variante set qtd = qtd + ? where sku = ?", e.qtd(), e.sku());
+        db.executar("update variante set qtd = qtd + ? where sku = ?", e.qtd(), skuEntrada);
         db.executar("insert into movimento_estoque (data, tipo, sku, qtd, origem, usuario) values (?, 'entrada', ?, ?, ?, ?)",
-            ctx.agora(), e.sku(), e.qtd(), fornecedor.isEmpty() ? "Fornecedor" : fornecedor, ctx.nome());
+            ctx.agora(), skuEntrada, e.qtd(), fornecedor.isEmpty() ? "Fornecedor" : fornecedor, ctx.nome());
         BigDecimal total = r2(custo.multiply(BigDecimal.valueOf(e.qtd())));
         String peca = Banco.txt(v, "nome") + " " + Banco.txt(v, "tamanho");
         if (gerarConta) {
@@ -180,6 +217,13 @@ public class CatalogoService {
         }
         auditoria.registrar(ctx.usuario(), "Entrada de mercadoria", e.qtd() + "x " + peca + " " + Banco.txt(v, "cor")
             + (fornecedor.isEmpty() ? "" : " de " + fornecedor) + (gerarConta ? ", conta a pagar de " + brl(total) : ""), null);
+        Map<String, Object> r = new LinkedHashMap<>();
+        r.put("sku", skuEntrada);
+        r.put("codigoBarras", Banco.txt(v, "codigo_barras"));
+        r.put("tamanho", Banco.txt(v, "tamanho"));
+        r.put("cor", Banco.txt(v, "cor"));
+        r.put("variacaoNova", nova);
+        return r;
     }
 
     /** Movimenta o estoque de uma variação (venda, devolução, cancelamento). Saída não deixa o estoque negativo. */

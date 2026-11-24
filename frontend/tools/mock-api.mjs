@@ -80,12 +80,42 @@ function operacao(rota, b, u, params) {
         variantes: b.tamanhos.flatMap(t => b.cores.map(cor => ({ sku: `${id}-${t === 'Único' ? 'U' : t}-${slug(cor)}`, tam: t, cor, qtd: 0, min: b.minimo || 0 }))) });
       const codigos = garantirCodigos(db); reg('Produto cadastrado', `${id} ${b.nome}, ${brl(b.preco)}`); return { id, codigos };
     }
+    case 'PUT /api/produtos': {
+      const p = db.products.find(x => x.id === params.codigo); exigir(p, 'Produto não encontrado.');
+      const nome = (b.nome || '').trim(), categoria = (b.categoria || '').trim(), preco = round2(b.preco || 0), custo = round2(b.custo || 0);
+      exigir(nome, 'Informe o nome do produto.'); exigir(categoria, 'Informe a categoria.'); exigir(preco > 0, 'Informe o preço de venda.');
+      exigir(custo >= 0, 'O custo não pode ser negativo.'); exigir(b.minimo == null || b.minimo >= 0, 'O estoque mínimo não pode ser negativo.');
+      const mud = [];
+      if (nome !== p.nome) mud.push(`nome: ${p.nome} → ${nome}`);
+      if (categoria !== p.categoria) mud.push(`categoria: ${p.categoria} → ${categoria}`);
+      if (preco !== p.preco) mud.push(`preço: ${brl(p.preco)} → ${brl(preco)}`);
+      if (custo !== p.custo) mud.push(`custo: ${brl(p.custo)} → ${brl(custo)}`);
+      if (b.minimo != null && p.variantes.some(v => v.min !== b.minimo)) { mud.push(`estoque mínimo: ${b.minimo} em todas as variações`); p.variantes.forEach(v => { v.min = b.minimo; }); }
+      if (mud.length) { Object.assign(p, { nome, categoria, preco, custo }); reg('Produto alterado', `${p.id} ${nome}: ${mud.join('; ')}`); }
+      return { ok: true };
+    }
     case 'POST /api/estoque/entradas': {
-      const p = db.products.find(x => x.variantes.some(v => v.sku === b.sku)); exigir(p && b.qtd > 0, 'Informe a quantidade que chegou.');
-      const v = p.variantes.find(x => x.sku === b.sku); v.qtd += b.qtd;
+      exigir(b.qtd > 0, 'Informe a quantidade que chegou.');
+      let sku = b.sku; const nova = !sku && !!b.produto;
+      if (nova) {
+        const p = db.products.find(x => x.id === b.produto); exigir(p, 'Produto não encontrado.');
+        let tam = (b.tamanho || '').trim(); const cor = (b.cor || '').trim();
+        exigir(tam && cor, 'Informe o tamanho e a cor da nova variação.');
+        tam = /^[uú]nico$/i.test(tam) ? 'Único' : tam.toUpperCase();
+        exigir(/^[\p{L}\p{N}]{1,10}$/u.test(tam), 'O tamanho deve ter só letras e números (até 10), como G, GG, 38 ou Único.');
+        exigir(slug(cor), 'A cor precisa ter letras.');
+        exigir(!p.variantes.some(v => v.tam.toLowerCase() === tam.toLowerCase() && v.cor.toLowerCase() === cor.toLowerCase()), 'Esta variação já existe. Escolha-a na lista.');
+        sku = `${p.id}-${tam === 'Único' ? 'U' : tam}-${slug(cor)}`;
+        exigir(!p.variantes.some(v => v.sku === sku), `A cor "${cor}" gera o mesmo código de outra cor parecida deste produto. Diferencie o nome da cor.`);
+        const mins = p.variantes.map(v => v.min); const min = mins.sort((a, c) => mins.filter(x => x === c).length - mins.filter(x => x === a).length || a - c)[0] ?? 0;
+        p.variantes.push({ sku, tam, cor, qtd: 0, min }); garantirCodigos(db);
+        reg('Variação cadastrada', `${p.id} ${p.nome}: ${tam}, ${cor} (código de barras ${p.variantes.at(-1).codigoBarras})`);
+      }
+      const p = db.products.find(x => x.variantes.some(v => v.sku === sku)); exigir(p, 'Variação de produto não encontrada.');
+      const v = p.variantes.find(x => x.sku === sku); v.qtd += b.qtd;
       db.movs.push({ id: ids(), data: agora(), tipo: 'entrada', sku: v.sku, nome: p.nome, var: `${v.tam}, ${v.cor}`, qtd: b.qtd, origem: b.fornecedor || 'Fornecedor' });
       if (b.gerarConta && b.custo > 0) db.lanc.push({ id: ids(), data: b.venc, origem: 'Estoque', tipo: 'despesa', categoria: 'Fornecedores', descricao: `${p.nome} ${v.tam} x${b.qtd}${b.fornecedor ? ' (' + b.fornecedor + ')' : ''}`, valor: round2(b.qtd * b.custo), venc: b.venc, status: 'pendente', pagoEm: null });
-      reg('Entrada de mercadoria', `${b.qtd}x ${p.nome} ${v.tam} ${v.cor}`); return { ok: true };
+      reg('Entrada de mercadoria', `${b.qtd}x ${p.nome} ${v.tam} ${v.cor}`); return { sku, codigoBarras: v.codigoBarras, tamanho: v.tam, cor: v.cor, variacaoNova: nova };
     }
     case 'POST /api/clientes': case 'PUT /api/clientes': {
       const id = params.id ? Number(params.id) : null;
@@ -211,7 +241,7 @@ function vender(db, b, u, ctx, cx, reg) {
 
 /* Menus exigidos por operação (o mesmo que o backend confere). */
 const PERMISSOES = {
-  'POST /api/produtos': ['estoque'], 'POST /api/estoque/entradas': ['estoque'], 'PUT /api/config/etiquetas': ['estoque'],
+  'POST /api/produtos': ['estoque'], 'PUT /api/produtos': ['estoque'], 'POST /api/estoque/entradas': ['estoque'], 'PUT /api/config/etiquetas': ['estoque'],
   'POST /api/clientes': ['clientes', 'pdv'], 'PUT /api/clientes': ['clientes'],
   'POST /api/caixa/abrir': ['caixa', 'pdv'], 'POST /api/caixa/movimentos': ['caixa'], 'POST /api/caixa/fechar': ['caixa'],
   'POST /api/vendas': ['pdv'], 'POST /api/vendas/devolucoes': ['caixa'], 'POST /api/vendas/cancelamento': ['caixa'],
@@ -232,6 +262,7 @@ function gerarContasFixas(db) {
 
 /* Rotas com parâmetros: /api/clientes/5 -> 'PUT /api/clientes' + { id: '5' } */
 const ROTAS = [
+  [/^\/api\/produtos\/([^/]+)$/, '/api/produtos', ['codigo']],
   [/^\/api\/clientes\/(\d+)$/, '/api/clientes', ['id']],
   [/^\/api\/vendas\/(\d+)\/devolucoes$/, '/api/vendas/devolucoes', ['id']],
   [/^\/api\/vendas\/(\d+)\/cancelamento$/, '/api/vendas/cancelamento', ['id']],

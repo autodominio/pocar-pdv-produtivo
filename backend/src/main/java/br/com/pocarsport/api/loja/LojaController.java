@@ -120,8 +120,7 @@ public class LojaController {
 
     @PostMapping("/estoque/entradas")
     public Map<String, Object> entrada(@RequestBody Pedidos.EntradaMercadoria p, Authentication auth) {
-        catalogo.entrada(p, ctx(auth, "estoque"));
-        return ok();
+        return catalogo.entrada(p, ctx(auth, "estoque"));
     }
 
     // ------------------------------------------------------------------ clientes

@@ -20,7 +20,12 @@ public final class Pedidos {
     public record EdicaoProduto(String nome, String categoria, BigDecimal preco, BigDecimal custo, Integer minimo) {
     }
 
-    public record EntradaMercadoria(String sku, Integer qtd, BigDecimal custo, String fornecedor, Boolean gerarConta, LocalDate venc) {
+    /**
+     * Entrada de mercadoria. Variação existente: informe o sku.
+     * Variação nova (tamanho ou cor que o produto ainda não tem): sku vazio + produto, tamanho e cor.
+     */
+    public record EntradaMercadoria(String sku, Integer qtd, BigDecimal custo, String fornecedor, Boolean gerarConta, LocalDate venc,
+                                    String produto, String tamanho, String cor) {
     }
 
     // ------------------------------------------------------------------ clientes

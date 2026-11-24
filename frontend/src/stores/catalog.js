@@ -32,18 +32,27 @@ export const useCatalogStore = defineStore('catalog', () => {
   const movsRecentes = computed(() => [...state.movs].sort((a, b) => b.data.localeCompare(a.data)).slice(0, 12));
 
   /* ---------- entrada de mercadoria (gera conta a pagar no financeiro) ---------- */
-  const entrada = reactive({ open: false, pid: '', sku: '', qtd: 10, custo: 0, fornecedor: '', gerarConta: true, venc: '' });
+  const entrada = reactive({ open: false, pid: '', sku: '', qtd: 10, custo: 0, fornecedor: '', gerarConta: true, venc: '', novaTam: '', novaCor: '' });
+  const NOVA_VARIACAO = '__nova__';
+  const entradaNova = computed(() => entrada.sku === NOVA_VARIACAO);
+  const entradaValida = computed(() => entrada.qtd > 0 && (!entrada.gerarConta || !!entrada.venc) && (!entradaNova.value || (entrada.novaTam.trim() && entrada.novaCor.trim())));
   const entradaProd = computed(() => state.products.find(p => p.id === entrada.pid) || state.products[0]);
   const onEntradaProd = () => { const p = entradaProd.value; const low = p.variantes.slice().sort((a, b) => a.qtd - b.qtd)[0]; entrada.sku = low.sku; entrada.custo = p.custo; };
   const openEntrada = pid => { if (!state.products.length) { notify('Cadastre um produto antes de lançar entrada de mercadoria.'); return; }
     entrada.pid = pid || (lowStock.value[0] ? variantIndex.value[lowStock.value[0].sku].p.id : state.products[0].id);
-    onEntradaProd(); Object.assign(entrada, { open: true, qtd: 10, fornecedor: '', gerarConta: true, venc: isoDate(addDays(startOfToday(), 28)) }); };
+    onEntradaProd(); Object.assign(entrada, { open: true, qtd: 10, fornecedor: '', gerarConta: true, venc: isoDate(addDays(startOfToday(), 28)), novaTam: '', novaCor: '' }); };
   const salvarEntrada = async () => {
-    const hit = variantIndex.value[entrada.sku]; if (!hit || !(entrada.qtd > 0)) return;
-    const p = { sku: entrada.sku, qtd: entrada.qtd, custo: round2(entrada.custo || 0), fornecedor: entrada.fornecedor.trim(), gerarConta: entrada.gerarConta, venc: entrada.venc || null };
-    if (!await db.executar(() => api.entradaMercadoria(p))) return;
+    if (!entradaValida.value) return;
+    const nova = entradaNova.value;
+    if (!nova && !variantIndex.value[entrada.sku]) return;
+    const p = { sku: nova ? null : entrada.sku, qtd: entrada.qtd, custo: round2(entrada.custo || 0), fornecedor: entrada.fornecedor.trim(), gerarConta: entrada.gerarConta, venc: entrada.venc || null,
+      produto: nova ? entrada.pid : null, tamanho: nova ? entrada.novaTam.trim() : null, cor: nova ? entrada.novaCor.trim() : null };
+    const r = await db.executar(() => api.entradaMercadoria(p));
+    if (!r) return;
     entrada.open = false;
-    notify(`Entrada de ${entrada.qtd} peças lançada${entrada.gerarConta ? ' e conta a pagar criada' : ''}.`);
+    const conta = entrada.gerarConta ? ' e conta a pagar criada' : '';
+    if (r.variacaoNova) { estq.exp = entrada.pid; notify(`Variação ${r.tamanho}, ${r.cor} cadastrada com ${entrada.qtd} peças${conta}. Imprima as etiquetas dela.`); }
+    else notify(`Entrada de ${entrada.qtd} peças lançada${conta}.`);
   };
 
   /* ---------- novo produto ---------- */
@@ -80,5 +89,5 @@ export const useCatalogStore = defineStore('catalog', () => {
   };
 
   return { edicao, edicaoValida, openEdicao, salvarEdicao, categorias, variantIndex, variantPorCodigo, variantOf, lowStock, estq, est, estProdutos, toggleExp, vendidas30, movsRecentes,
-    entrada, entradaProd, onEntradaProd, openEntrada, salvarEntrada, novo, novoCores, novoValido, openNovo, salvarNovo };
+    entrada, entradaProd, entradaNova, entradaValida, NOVA_VARIACAO, onEntradaProd, openEntrada, salvarEntrada, novo, novoCores, novoValido, openNovo, salvarNovo };
 });
